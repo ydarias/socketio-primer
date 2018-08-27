@@ -14,7 +14,7 @@
             font: 13px Helvetica, Arial;
         }
 
-        form {
+        #messageForm {
             background: #000;
             padding: 3px;
             position: fixed;
@@ -22,14 +22,14 @@
             width: 100%;
         }
 
-        form input {
+        #messageForm input {
             border: 0;
             padding: 10px;
             width: 90%;
             margin-right: .5%;
         }
 
-        form button {
+        #messageForm button {
             width: 9%;
             background: rgb(130, 224, 255);
             border: none;
@@ -54,14 +54,28 @@
 
 <body>
     <ul id="messages"></ul>
-    <form action="">
-        <input id="m" autocomplete="off" />
-        <button>Send</button>
-    </form>
 
+    <div id="messageForm">
+        <input v-model="message" />
+        <button v-on:click="submitMessage">Send</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
     <script>
         var socket = io();
+
+        var app = new Vue({
+            el: "#messageForm",
+            data: {
+                message: ''
+            },
+            methods: {
+                submitMessage: function(event) {
+                    socket.emit('chat message', this.message);
+                }
+            }
+        });
     </script>
 </body>
 
