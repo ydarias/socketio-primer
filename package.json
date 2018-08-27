@@ -4,7 +4,8 @@
   "description": "Testing on how to use Socket.io",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "clean": "rm -rf dist/",
+    "build": "tsc && cp -r static/* dist/",
     "dev": "tsc --watch & nodemon dist",
     "test": "test",
     "lint": "eslint src --ext ts",
