@@ -1,0 +1,37 @@
+{
+  "name": "socketio-primer",
+  "version": "1.0.0",
+  "description": "Testing on how to use Socket.io",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch & nodemon dist",
+    "test": "test",
+    "lint": "eslint src --ext ts",
+    "tsc": "tsc",
+    "start": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ydarias/socketio-primer.git"
+  },
+  "author": "Yeray Darias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ydarias/socketio-primer/issues"
+  },
+  "homepage": "https://github.com/ydarias/socketio-primer#readme",
+  "dependencies": {
+    "@types/node": "^10.9.2",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.5",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-promise": "^4.0.0",
+    "typescript": "^3.0.1",
+    "typescript-eslint-parser": "^18.0.0"
+  }
+}
